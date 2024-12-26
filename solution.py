@@ -2,10 +2,10 @@ def can_achieve_score(hp, m, pumpkins, required_score):
     mhp = [[0] * (hp + 1) for _ in range(m + 1)]
 
     for i in range(1, m + 1):
-        p_hp, p_poins = pumpkins[i - 1]
+        p_hp, p_points = pumpkins[i - 1]
         for j in range(hp + 1):
             if j >= p_hp:
-                mhp[i][j] = max(mhp[i - 1][j], mhp[i - 1][j - p_hp] + p_poins)
+                mhp[i][j] = max(mhp[i - 1][j], mhp[i - 1][j - p_hp] + p_points)
             else:
                 mhp[i][j] = mhp[i - 1][j]
 
